@@ -1,0 +1,23 @@
+{
+    "name": "gabriel/derom",
+    "description": "Proyecto de pagina web - Derom",
+    "license": "project",
+    "autoload": {
+        "psr-4": {
+            "Gabriel\\Derom\\": "src/",
+            "Model\\" : "./models",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gab18",
+            "email": "softarthur18@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.1",
+        "intervention/image": "^2.7"
+    }
+}
