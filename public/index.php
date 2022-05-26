@@ -8,15 +8,14 @@
 
     $router = new Router;
 
-
-    $router->get('/propiedades/admin',[PropiedadController::class, 'index']);
+    $router->get('/admin', [PropiedadController::class, 'index']);
     $router->get('/propiedades/crear', [PropiedadController::class, 'crear']);
     $router->post('/propiedades/crear', [PropiedadController::class, 'crear']);
     $router->get('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
     $router->post('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
     $router->post('/propiedades/eliminar', [PropiedadController::class, 'eliminar']);
-
-
+    
+    $router->get('/vendedores', [VendedorController::class, 'index']);
     $router->get('/vendedores/crear', [VendedorController::class, 'crear']);
     $router->post('/vendedores/crear', [VendedorController::class, 'crear']);
     $router->get('/vendedores/actualizar', [VendedorController::class, 'actualizar']);
