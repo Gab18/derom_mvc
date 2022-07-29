@@ -153,11 +153,11 @@ public static function get($cantidad){
     return $resultado;
 }
 
-
-// Buscar un registro por su id
-public function find($id) {
-    $query = "SELEC * FROM" . static::$tabla .  " WHERE id = ${id}";
+public static function find($id){
+    $query = " SELECT * FROM ". static::$tabla ." WHERE id = ${id}";
     $resultado = self::consultarSQL($query);
+        
+    //Retorna el primer elemento de un arreglo
     return array_shift($resultado);
 }
 

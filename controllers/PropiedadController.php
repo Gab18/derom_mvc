@@ -77,7 +77,9 @@ class PropiedadController {
         $id = validarORedireccionar('/admin');
 
         $propiedad = Propiedad::find($id);
+
         $errores = Propiedad::getErrores();
+        $vendedores = new Vendedor;
 
         // Metodo POST para Actualizar
         if($_SERVER['REQUEST_METHOD'] === 'POST'){

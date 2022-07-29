@@ -1,7 +1,7 @@
 <main class="contenedor seccion">
-    <h1>Actualizar Vendedor: <?php echo s($vendedor->nombre) . " " . s($vendedor->apellido); ?> </h1>
+    <h1>Actualizar Propiedad </h1>
 
-    <a href="/vendedores" class="boton boton-verde">Volver</a>
+    <a href="/propiedades" class="boton boton-verde">Volver</a>
 
     <?php foreach($errores as $error): ?>
     <div class="alerta error">

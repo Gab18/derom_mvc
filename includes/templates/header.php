@@ -21,7 +21,7 @@
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img src="/build/img/logo.svg" alt="Logotipo de Bienes Raices">
+                    <img src="" alt="Logotipo de Derom Real Estate">
                 </a>
 
                 <div class="mobile-menu">

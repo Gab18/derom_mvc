@@ -9,17 +9,74 @@ class VendedorController {
     public static function crear( Router $router) {
 
         $errores = Vendedor::getErrores();
+        $vendedor = new Vendedor;
 
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            // Crear una nueva instancia
+            $vendedor = new Vendedor($_POST['vendedor']);
+    
+            // Validar campos
+            $errores = $vendedor->validar();
+    
+            // No hay errores
+            if(empty($errores)){
+                $vendedor->guardar();
+            }
+        }
         $router->render('vendedores/crear', [
-            'errores' => $errores
+            'errores' => $errores,
+            'vendedor' => $vendedor
         ]);
     }
 
-    public static function actualizar() {
-        echo " Actualizar vendedor";
+    public static function actualizar( Router $router) {
+
+        $errores = Vendedor::getErrores();
+        $id =validarORedireccionar('/admin');
+
+        //Obtener datos del vendedor actualizado
+        $vendedor = Vendedor::find($id);  
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+            // Asignar los valores
+            $args = $_POST['vendedor'];
+    
+            // Sincronizar objeto en memoria
+            $vendedor->sincronizar($args);
+    
+            // Validacion
+            $errores = $vendedor->validar();
+    
+            if(empty($errores)){
+                $vendedor->guardar();
+            }
+        }
+
+        $router->render('vendedores/actualizar', [
+            'errores' => $errores,
+            'vendedor' => $vendedor
+
+        ]);
     }
 
     public static function eliminar() {
-        echo "Eliminar vendedor";
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Validar el ID
+            $id = $_POST['id'];
+
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+
+            if($id) {
+                // Validar el tipo o eliminar
+                $tipo = $_POST['tipo'];
+
+                if(validarTipoContenido($tipo)) {
+                    $vendedor = Vendedor::find($id);
+                    $vendedor->eliminar();
+                }
+            }
+        }
     }
 }

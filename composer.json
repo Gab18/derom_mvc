@@ -18,6 +18,7 @@
     ],
     "require": {
         "firebase/php-jwt": "^6.1",
-        "intervention/image": "^2.7"
+        "intervention/image": "^2.7",
+        "phpmailer/phpmailer": "^6.6"
     }
 }

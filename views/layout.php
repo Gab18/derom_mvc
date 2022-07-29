@@ -31,15 +31,15 @@
             <div class="derecha">
                 <img class="dark-mode-boton" src="/build/img/dark-mode.svg">
                 <nav class="navegacion">
-                <a href="index.php">Home</a>
-                    <a href="anuncios.php">Advertisements</a>
-                    <a href="anuncios.php">Rent</a>
-                    <a href="nosotros.php">Brokers</a>
-                    <a href="blog.php">Blog</a>
-                    <a href="nosotros.php">About</a>
-                    <a href="contacto.php">Contact</a>
+                    <a href="/">Home</a>
+                    <a href="/propiedades">Advertisements</a>
+                    <a href="/propiedades">Rent</a>
+                    <a href="/nosotros">Brokers</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/nosotros">About</a>
+                    <a href="/contacto">Contact</a>
                     <?php if($auth):  ?>
-                        <a href="cerrar-sesion.php">Cerrar Sesion</a>
+                        <a href="/logout">Cerrar Sesion</a>
                     <?php endif; ?>
                 </nav>
             </div>   
