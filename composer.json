@@ -1,4 +1,9 @@
 {
+    "post-install-cmd": [
+        "php artisan clear-compiled",
+        "chmod -R 777 public/"
+    ],
+    
     "name": "gabriel/derom",
     "description": "Proyecto de pagina web - Derom",
     "license": "project",
